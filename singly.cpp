@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 class LinkedList
@@ -8,8 +8,16 @@ class LinkedList
         int data;
         Node *next;
 
-        Node(int val) : data(val), next(nullptr) {}
-        Node(int val, Node *ptr) : data(val), next(ptr) {}
+        Node(int val)
+        {
+            data = val;
+            next = nullptr;
+        }
+        Node(int val, Node *ptr) 
+        {
+            data = val;
+            next = ptr;
+        }
     };
 
     Node *head = nullptr;
