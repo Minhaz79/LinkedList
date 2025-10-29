@@ -24,16 +24,15 @@ class doublyList
     {
         Node *nn = new Node(item);
         nn->next = head;
-        if (head != nullptr) /////First Mistake if head is NULL
+        if (head != nullptr) 
         {
             head->prev = nn;
-            head = nn;
         }
         else
         {
-            head = nn;
             tail = nn;
         }
+        head = nn;
     }
     void InsertLast(int item)
     {
@@ -55,7 +54,7 @@ class doublyList
             cout << "Can't delete\n";
             return;
         }
-        if (head == tail) //// Its not mandatory here as we can do it in Delete() but it could be dengerous
+        if (head == tail)
         {
             delete head;
             head = tail = nullptr;
@@ -76,7 +75,7 @@ class doublyList
             cout << "Can't delete\n";
             return;
         }
-        if (head == tail) //// Its not mandatory here as we can do it in Delete() but it could be dengerous
+        if (head == tail)
         {
             delete head;
             head = tail = nullptr;
@@ -119,12 +118,12 @@ public:
         target->prev->next = nn;
 
         nn->next = target;
-        target->prev = nn; ///// 2nd Mistake target -> next = nn X
+        target->prev = nn; 
     }
 
     void Delete(int pos)
     {
-        if (pos < 1 || pos > SIZE) //////  3rd Mistake SIZE + 1 X
+        if (pos < 1 || pos > SIZE)
         {
             cout << "Invalid position\n";
             return;
@@ -199,4 +198,5 @@ int main()
     dll.Search(3);
 
     return 0;
+
 }
